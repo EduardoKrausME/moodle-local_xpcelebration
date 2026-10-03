@@ -22,6 +22,8 @@
  * @license    https://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
+defined('MOODLE_INTERNAL') || die;
+
 $string['continue'] = 'Continuar';
 $string['coursecompletedmessage'] = 'Você chegou a 100% de progresso em {coursename}.';
 $string['coursecompletedtitle'] = 'Progresso do curso concluído';
