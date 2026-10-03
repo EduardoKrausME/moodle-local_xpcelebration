@@ -1,0 +1,24 @@
+<div class="local-xpcelebration local-xpcelebration-achievement local-xpcelebration--{{theme}}"
+     data-celebration-id="{{id}}" role="status" aria-live="polite">
+    <div class="local-xpcelebration__surface">
+        <div class="local-xpcelebration__badge" aria-hidden="true">
+            <svg viewBox="0 0 64 64" focusable="false" aria-hidden="true">
+                <circle cx="32" cy="32" r="27"/>
+                <path d="M32 15l4.8 9.8 10.8 1.6-7.8 7.6 1.8 10.7L32 39.6l-9.6 5.1 1.8-10.7-7.8-7.6 10.8-1.6L32 15z"/>
+            </svg>
+        </div>
+        <div class="local-xpcelebration__copy">
+            <h3 class="local-xpcelebration__title">{{title}}</h3>
+            <p class="local-xpcelebration__message">{{message}}</p>
+            {{#hasprogress}}
+                <div class="local-xpcelebration__progress" aria-hidden="true">
+                    <span class="local-xpcelebration__progressbar" data-progress="{{progress}}"></span>
+                </div>
+            {{/hasprogress}}
+        </div>
+        <div class="local-xpcelebration__actions">
+            <button type="button" class="btn btn-secondary" data-action="close">{{continueLabel}}</button>
+            <button type="button" class="btn btn-link local-xpcelebration__motion" data-action="motion">{{motionLabel}}</button>
+        </div>
+    </div>
+</div>

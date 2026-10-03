@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<XMLDB PATH="local/xpcelebration/db" VERSION="20261003" COMMENT="XMLDB file for local_xpcelebration"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="../../../lib/xmldb/xmldb.xsd">
+    <TABLES>
+        <TABLE NAME="local_xpcelebration_queue" COMMENT="Queued visual celebrations for learners">
+            <FIELDS>
+                <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="true"/>
+                <FIELD NAME="userid" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0"/>
+                <FIELD NAME="courseid" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0"/>
+                <FIELD NAME="type" TYPE="char" LENGTH="64" NOTNULL="true"/>
+                <FIELD NAME="title" TYPE="char" LENGTH="255" NOTNULL="true"/>
+                <FIELD NAME="message" TYPE="text" NOTNULL="true"/>
+                <FIELD NAME="datajson" TYPE="text" NOTNULL="false"/>
+                <FIELD NAME="priority" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="50"/>
+                <FIELD NAME="status" TYPE="char" LENGTH="16" NOTNULL="true" DEFAULT="pending"/>
+                <FIELD NAME="timecreated" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0"/>
+                <FIELD NAME="timeshown" TYPE="int" LENGTH="10" NOTNULL="false"/>
+                <FIELD NAME="timeexpired" TYPE="int" LENGTH="10" NOTNULL="false"/>
+            </FIELDS>
+            <KEYS>
+                <KEY NAME="primary" TYPE="primary" FIELDS="id"/>
+                <KEY NAME="userfk" TYPE="foreign" FIELDS="userid" REFTABLE="user" REFFIELDS="id"/>
+                <KEY NAME="coursefk" TYPE="foreign" FIELDS="courseid" REFTABLE="course" REFFIELDS="id"/>
+            </KEYS>
+            <INDEXES>
+                <INDEX NAME="usercoursestatuspriority" UNIQUE="false" FIELDS="userid, courseid, status, priority"/>
+                <INDEX NAME="statusexpiry" UNIQUE="false" FIELDS="status, timeexpired"/>
+            </INDEXES>
+        </TABLE>
+        <TABLE NAME="local_xpcelebration_state" COMMENT="Personal XP snapshot used to detect backend level changes">
+            <FIELDS>
+                <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="true"/>
+                <FIELD NAME="userid" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0"/>
+                <FIELD NAME="courseid" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0"/>
+                <FIELD NAME="lastxp" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0"/>
+                <FIELD NAME="lastlevelxp" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0"/>
+                <FIELD NAME="lastprogress" TYPE="int" LENGTH="3" NOTNULL="true" DEFAULT="0"/>
+                <FIELD NAME="timemodified" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0"/>
+            </FIELDS>
+            <KEYS>
+                <KEY NAME="primary" TYPE="primary" FIELDS="id"/>
+                <KEY NAME="userfk" TYPE="foreign" FIELDS="userid" REFTABLE="user" REFFIELDS="id"/>
+                <KEY NAME="coursefk" TYPE="foreign" FIELDS="courseid" REFTABLE="course" REFFIELDS="id"/>
+            </KEYS>
+            <INDEXES>
+                <INDEX NAME="usercourseuniq" UNIQUE="true" FIELDS="userid, courseid"/>
+            </INDEXES>
+        </TABLE>
+    </TABLES>
+</XMLDB>

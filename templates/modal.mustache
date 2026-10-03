@@ -1,0 +1,24 @@
+<div class="local-xpcelebration local-xpcelebration-modal local-xpcelebration--{{theme}}"
+     data-celebration-id="{{id}}" role="dialog" aria-modal="false"
+     aria-labelledby="local-xpcelebration-title-{{id}}" aria-describedby="local-xpcelebration-message-{{id}}">
+    <div class="local-xpcelebration__surface">
+        <div class="local-xpcelebration__badge" aria-hidden="true">
+            <svg viewBox="0 0 64 64" focusable="false" aria-hidden="true">
+                <path d="M32 5l7.2 14.6 16.1 2.3-11.7 11.4 2.8 16.1L32 41.9 17.6 49.4l2.8-16.1L8.7 21.9l16.1-2.3L32 5z"/>
+            </svg>
+        </div>
+        <div class="local-xpcelebration__copy">
+            <h2 class="local-xpcelebration__title" id="local-xpcelebration-title-{{id}}">{{title}}</h2>
+            <p class="local-xpcelebration__message" id="local-xpcelebration-message-{{id}}">{{message}}</p>
+            {{#hasprogress}}
+                <div class="local-xpcelebration__progress" aria-hidden="true">
+                    <span class="local-xpcelebration__progressbar" data-progress="{{progress}}"></span>
+                </div>
+            {{/hasprogress}}
+        </div>
+        <div class="local-xpcelebration__actions">
+            <button type="button" class="btn btn-primary" data-action="close">{{continueLabel}}</button>
+            <button type="button" class="btn btn-link local-xpcelebration__motion" data-action="motion">{{motionLabel}}</button>
+        </div>
+    </div>
+</div>
