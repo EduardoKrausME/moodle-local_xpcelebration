@@ -8,11 +8,11 @@
 //
 // Moodle is distributed in the hope that it will be useful,
 // but WITHOUT ANY WARRANTY; without even the implied warranty of
-// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 // GNU General Public License for more details.
 //
 // You should have received a copy of the GNU General Public License
-// along with Moodle. If not, see <https://www.gnu.org/licenses/>.
+// along with Moodle.  If not, see <https://www.gnu.org/licenses/>.
 
 /**
  * Privacy provider.
@@ -45,6 +45,8 @@ final class provider implements
     \core_privacy\local\request\user_preference_provider {
 
     /**
+     * Describe the personal data stored by the plugin.
+     *
      * @param collection $collection Metadata collection.
      * @return collection
      */
@@ -77,6 +79,8 @@ final class provider implements
     }
 
     /**
+     * Return contexts containing data for a user.
+     *
      * @param int $userid User id.
      * @return contextlist
      */
@@ -99,6 +103,8 @@ final class provider implements
     }
 
     /**
+     * Export user data for approved contexts.
+     *
      * @param approved_contextlist $contextlist Approved contexts.
      * @return void
      */
@@ -150,6 +156,8 @@ final class provider implements
     }
 
     /**
+     * Delete all plugin data in a context.
+     *
      * @param context $context Context.
      * @return void
      */
@@ -163,6 +171,8 @@ final class provider implements
     }
 
     /**
+     * Delete data for a user in approved contexts.
+     *
      * @param approved_contextlist $contextlist Approved contexts.
      * @return void
      */
@@ -186,6 +196,8 @@ final class provider implements
     }
 
     /**
+     * Add users with plugin data in a context.
+     *
      * @param userlist $userlist User list.
      * @return void
      */
@@ -202,6 +214,8 @@ final class provider implements
     }
 
     /**
+     * Delete plugin data for approved users.
+     *
      * @param approved_userlist $userlist Approved users.
      * @return void
      */

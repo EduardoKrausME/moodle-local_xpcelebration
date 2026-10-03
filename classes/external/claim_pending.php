@@ -8,11 +8,11 @@
 //
 // Moodle is distributed in the hope that it will be useful,
 // but WITHOUT ANY WARRANTY; without even the implied warranty of
-// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 // GNU General Public License for more details.
 //
 // You should have received a copy of the GNU General Public License
-// along with Moodle. If not, see <https://www.gnu.org/licenses/>.
+// along with Moodle.  If not, see <https://www.gnu.org/licenses/>.
 
 /**
  * Claim pending celebrations AJAX endpoint.
@@ -42,6 +42,8 @@ require_once($CFG->libdir . '/externallib.php');
  */
 final class claim_pending extends external_api {
     /**
+     * Describe the external function parameters.
+     *
      * @return external_function_parameters
      */
     public static function execute_parameters(): external_function_parameters {
@@ -52,6 +54,8 @@ final class claim_pending extends external_api {
     }
 
     /**
+     * Claim pending celebrations for the current user.
+     *
      * @param int $courseid Course id.
      * @param int $limit Requested limit.
      * @return array
@@ -88,6 +92,8 @@ final class claim_pending extends external_api {
     }
 
     /**
+     * Describe the external function return structure.
+     *
      * @return external_multiple_structure
      */
     public static function execute_returns(): external_multiple_structure {

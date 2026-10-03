@@ -8,11 +8,11 @@
 //
 // Moodle is distributed in the hope that it will be useful,
 // but WITHOUT ANY WARRANTY; without even the implied warranty of
-// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 // GNU General Public License for more details.
 //
 // You should have received a copy of the GNU General Public License
-// along with Moodle. If not, see <https://www.gnu.org/licenses/>.
+// along with Moodle.  If not, see <https://www.gnu.org/licenses/>.
 
 /**
  * Integration bridge for local_personalxp public API.
@@ -60,7 +60,13 @@ final class personalxp_bridge {
                 'timemodified' => time(),
             ]);
         } catch (\dml_write_exception $exception) {
-            // Another concurrent request may have created the baseline first.
+            // Only suppress the expected race where another request inserted the same baseline first.
+            if (!$DB->record_exists('local_xpcelebration_state', [
+                'userid' => $userid,
+                'courseid' => $courseid,
+            ])) {
+                throw $exception;
+            }
         }
     }
 
@@ -180,6 +186,8 @@ final class personalxp_bridge {
     }
 
     /**
+     * Resolve the one-based level number for an XP threshold.
+     *
      * @param int $threshold Level XP threshold.
      * @return int One-based level number.
      */

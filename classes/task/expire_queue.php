@@ -8,11 +8,11 @@
 //
 // Moodle is distributed in the hope that it will be useful,
 // but WITHOUT ANY WARRANTY; without even the implied warranty of
-// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 // GNU General Public License for more details.
 //
 // You should have received a copy of the GNU General Public License
-// along with Moodle. If not, see <https://www.gnu.org/licenses/>.
+// along with Moodle.  If not, see <https://www.gnu.org/licenses/>.
 
 /**
  * Queue expiration task.
@@ -32,6 +32,8 @@ use local_xpcelebration\local\queue_manager;
  */
 final class expire_queue extends scheduled_task {
     /**
+     * Return the scheduled task name.
+     *
      * @return string
      */
     public function get_name(): string {
@@ -39,6 +41,8 @@ final class expire_queue extends scheduled_task {
     }
 
     /**
+     * Expire stale pending celebrations.
+     *
      * @return void
      */
     public function execute(): void {

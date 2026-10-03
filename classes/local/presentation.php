@@ -8,11 +8,11 @@
 //
 // Moodle is distributed in the hope that it will be useful,
 // but WITHOUT ANY WARRANTY; without even the implied warranty of
-// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 // GNU General Public License for more details.
 //
 // You should have received a copy of the GNU General Public License
-// along with Moodle. If not, see <https://www.gnu.org/licenses/>.
+// along with Moodle.  If not, see <https://www.gnu.org/licenses/>.
 
 /**
  * Presentation preparation and placeholder resolution.
@@ -141,6 +141,8 @@ final class presentation {
     }
 
     /**
+     * Resolve the default theme for a celebration type.
+     *
      * @param string $type Type.
      * @return string
      */
@@ -158,6 +160,8 @@ final class presentation {
     }
 
     /**
+     * Return the configured default theme.
+     *
      * @return string
      */
     private static function default_theme(): string {
@@ -166,6 +170,8 @@ final class presentation {
     }
 
     /**
+     * Resolve the display surface for a celebration type.
+     *
      * @param string $type Type.
      * @return string
      */
@@ -180,6 +186,8 @@ final class presentation {
     }
 
     /**
+     * Resolve the animation for a celebration type.
+     *
      * @param string $type Type.
      * @return string
      */

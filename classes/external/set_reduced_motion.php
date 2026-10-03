@@ -8,11 +8,11 @@
 //
 // Moodle is distributed in the hope that it will be useful,
 // but WITHOUT ANY WARRANTY; without even the implied warranty of
-// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 // GNU General Public License for more details.
 //
 // You should have received a copy of the GNU General Public License
-// along with Moodle. If not, see <https://www.gnu.org/licenses/>.
+// along with Moodle.  If not, see <https://www.gnu.org/licenses/>.
 
 /**
  * Reduced motion preference endpoint.
@@ -38,6 +38,8 @@ require_once($CFG->libdir . '/externallib.php');
  */
 final class set_reduced_motion extends external_api {
     /**
+     * Describe the external function parameters.
+     *
      * @return external_function_parameters
      */
     public static function execute_parameters(): external_function_parameters {
@@ -47,6 +49,8 @@ final class set_reduced_motion extends external_api {
     }
 
     /**
+     * Store the reduced-motion preference.
+     *
      * @param bool $enabled Preference.
      * @return bool
      */
@@ -61,6 +65,8 @@ final class set_reduced_motion extends external_api {
     }
 
     /**
+     * Describe the external function return value.
+     *
      * @return external_value
      */
     public static function execute_returns(): external_value {
