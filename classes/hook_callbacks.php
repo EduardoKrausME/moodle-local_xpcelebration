@@ -24,8 +24,6 @@
 
 namespace local_xpcelebration;
 
-use core\hook\output\before_standard_head_html_generation;
-
 /**
  * Hook callback handlers.
  */
@@ -33,12 +31,10 @@ class hook_callbacks {
     /**
      * Initialise the visual queue on standard Moodle pages.
      *
-     * @param before_standard_head_html_generation $hook The output hook.
+     * @param \core\hook\output\before_standard_head_html_generation $hook The output hook.
      * @return void
      */
-    public static function before_standard_head_html_generation(
-        before_standard_head_html_generation $hook,
-    ): void {
+    public static function before_standard_head_html_generation(\core\hook\output\before_standard_head_html_generation $hook) {
         global $CFG, $PAGE, $USER;
 
         if (during_initial_install() || isset($CFG->upgraderunning)) {
