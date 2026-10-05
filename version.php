@@ -25,7 +25,7 @@
 defined('MOODLE_INTERNAL') || die;
 
 $plugin->release = '1.0.3';
-$plugin->version = 2026100502;
+$plugin->version = 2026100503;
 $plugin->component = 'local_xpcelebration';
 $plugin->requires = 2024042200; // Moodle 4.4.
 $plugin->maturity = MATURITY_BETA;
