@@ -25,13 +25,6 @@
 defined('MOODLE_INTERNAL') || die;
 
 $observers = [
-    // Future/native Personal XP event. The current Personal XP release does not emit it yet,
-    // so the core source events below provide a compatibility bridge using its public API.
-    [
-        'eventname' => '\\local_personalxp\\event\\xp_awarded',
-        'callback' => '\\local_xpcelebration\\observer::personalxp_event',
-        'priority' => -100,
-    ],
     [
         'eventname' => '\\core\\event\\course_module_completion_updated',
         'callback' => '\\local_xpcelebration\\observer::personalxp_source_event',
