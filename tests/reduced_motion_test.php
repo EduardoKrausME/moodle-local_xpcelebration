@@ -24,13 +24,13 @@
 
 namespace local_xpcelebration;
 
-use local_xpcelebration\local\presentation;
+use local_xpcelebration\presentation;
 
 /**
  * Reduced motion preference tests.
  *
  * @package local_xpcelebration
- * @covers \local_xpcelebration\local\presentation
+ * @covers \local_xpcelebration\presentation
  */
 final class reduced_motion_test extends \advanced_testcase {
     public function test_user_reduced_motion_is_exposed_to_amd_config(): void {

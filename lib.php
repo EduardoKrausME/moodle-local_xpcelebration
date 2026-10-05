@@ -64,9 +64,9 @@ function local_xpcelebration_before_standard_html_head(): string {
         }
 
         // Prime the Personal XP snapshot before the learner performs another XP-generating action.
-        \local_xpcelebration\local\personalxp_bridge::prime_state((int)$USER->id, $courseid);
+        \local_xpcelebration\personalxp_bridge::prime_state((int)$USER->id, $courseid);
 
-        $config = \local_xpcelebration\local\presentation::get_client_config((int)$USER->id);
+        $config = \local_xpcelebration\presentation::get_client_config((int)$USER->id);
         $PAGE->requires->js_call_amd('local_xpcelebration/celebration', 'init', [$courseid, $config]);
     } catch (Throwable $exception) {
         debugging('local_xpcelebration could not initialise: ' . $exception->getMessage(), DEBUG_DEVELOPER);

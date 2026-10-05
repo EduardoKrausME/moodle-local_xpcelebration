@@ -24,7 +24,7 @@
 
 namespace local_xpcelebration;
 
-use local_xpcelebration\local\queue_manager;
+use local_xpcelebration\queue_manager;
 
 /**
  * Public API used by Personal XP and companion plugins.

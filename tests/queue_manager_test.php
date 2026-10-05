@@ -24,13 +24,13 @@
 
 namespace local_xpcelebration;
 
-use local_xpcelebration\local\queue_manager;
+use local_xpcelebration\queue_manager;
 
 /**
  * Queue semantics tests.
  *
  * @package local_xpcelebration
- * @covers \local_xpcelebration\local\queue_manager
+ * @covers \local_xpcelebration\queue_manager
  */
 final class queue_manager_test extends \advanced_testcase {
     public function test_celebration_is_claimed_only_once(): void {

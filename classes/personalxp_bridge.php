@@ -22,7 +22,7 @@
  * @license    https://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-namespace local_xpcelebration\local;
+namespace local_xpcelebration;
 
 use local_personalxp\service\xp_manager;
 use local_xpcelebration\api;

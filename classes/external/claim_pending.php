@@ -30,8 +30,8 @@ use external_function_parameters;
 use external_multiple_structure;
 use external_single_structure;
 use external_value;
-use local_xpcelebration\local\presentation;
-use local_xpcelebration\local\queue_manager;
+use local_xpcelebration\presentation;
+use local_xpcelebration\queue_manager;
 
 defined('MOODLE_INTERNAL') || die;
 global $CFG;

@@ -25,7 +25,7 @@
 namespace local_xpcelebration\task;
 
 use core\task\scheduled_task;
-use local_xpcelebration\local\queue_manager;
+use local_xpcelebration\queue_manager;
 
 /**
  * Mark stale pending celebrations as expired.

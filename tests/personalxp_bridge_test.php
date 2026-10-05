@@ -25,13 +25,13 @@
 namespace local_xpcelebration;
 
 use local_personalxp\service\xp_manager;
-use local_xpcelebration\local\personalxp_bridge;
+use local_xpcelebration\personalxp_bridge;
 
 /**
  * Personal XP backend level detection tests.
  *
  * @package local_xpcelebration
- * @covers \local_xpcelebration\local\personalxp_bridge
+ * @covers \local_xpcelebration\personalxp_bridge
  */
 final class personalxp_bridge_test extends \advanced_testcase {
     public function test_backend_level_up_creates_one_celebration(): void {

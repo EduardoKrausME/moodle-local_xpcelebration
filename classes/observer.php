@@ -25,7 +25,7 @@
 namespace local_xpcelebration;
 
 use core\event\base;
-use local_xpcelebration\local\personalxp_bridge;
+use local_xpcelebration\personalxp_bridge;
 use Throwable;
 
 /**
