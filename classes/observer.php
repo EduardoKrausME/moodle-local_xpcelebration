@@ -33,16 +33,6 @@ use Throwable;
  */
 final class observer {
     /**
-     * Observe a future/native Personal XP award event.
-     *
-     * @param base $event Event.
-     * @return void
-     */
-    public static function personalxp_event(base $event): void {
-        self::sync_event($event, false);
-    }
-
-    /**
      * Compatibility observer for the source events used by current local_personalxp.
      * Priority -100 makes this run after Personal XP's default-priority observer.
      *
