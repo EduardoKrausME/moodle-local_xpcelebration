@@ -1,5 +1,5 @@
 <?php
-// This file is part of Moodle - https://moodle.org/
+// This file is part of Moodle - http://moodle.org/
 //
 // Moodle is free software: you can redistribute it and/or modify
 // it under the terms of the GNU General Public License as published by
@@ -12,7 +12,7 @@
 // GNU General Public License for more details.
 //
 // You should have received a copy of the GNU General Public License
-// along with Moodle.  If not, see <https://www.gnu.org/licenses/>.
+// along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
  * tests/queue_manager_test.php for local_xpcelebration.
@@ -33,6 +33,11 @@ use local_xpcelebration\queue_manager;
  * @covers \local_xpcelebration\queue_manager
  */
 final class queue_manager_test extends \advanced_testcase {
+    /**
+     * Method test_celebration_is_claimed_only_once.
+     *
+     * @return void Return value.
+     */
     public function test_celebration_is_claimed_only_once(): void {
         $this->resetAfterTest();
         $user = $this->getDataGenerator()->create_user();
@@ -49,6 +54,11 @@ final class queue_manager_test extends \advanced_testcase {
         $this->assertCount(0, $second);
     }
 
+    /**
+     * Method test_multiple_events_form_priority_queue.
+     *
+     * @return void Return value.
+     */
     public function test_multiple_events_form_priority_queue(): void {
         $this->resetAfterTest();
         $user = $this->getDataGenerator()->create_user();
@@ -68,6 +78,11 @@ final class queue_manager_test extends \advanced_testcase {
         $this->assertSame($lowid, (int)$third[0]->id);
     }
 
+    /**
+     * Method test_expired_celebration_is_never_claimed.
+     *
+     * @return void Return value.
+     */
     public function test_expired_celebration_is_never_claimed(): void {
         global $DB;
         $this->resetAfterTest();
@@ -83,6 +98,11 @@ final class queue_manager_test extends \advanced_testcase {
         $this->assertCount(0, queue_manager::claim_pending($user->id, $course->id, 1));
     }
 
+    /**
+     * Method test_queue_isolated_by_user.
+     *
+     * @return void Return value.
+     */
     public function test_queue_isolated_by_user(): void {
         $this->resetAfterTest();
         $usera = $this->getDataGenerator()->create_user();
@@ -94,6 +114,11 @@ final class queue_manager_test extends \advanced_testcase {
         $this->assertCount(0, queue_manager::claim_pending($usera->id, $course->id, 1));
     }
 
+    /**
+     * Method test_queue_isolated_by_course_context.
+     *
+     * @return void Return value.
+     */
     public function test_queue_isolated_by_course_context(): void {
         $this->resetAfterTest();
         $user = $this->getDataGenerator()->create_user();

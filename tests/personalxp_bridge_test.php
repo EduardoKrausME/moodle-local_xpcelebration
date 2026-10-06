@@ -1,5 +1,5 @@
 <?php
-// This file is part of Moodle - https://moodle.org/
+// This file is part of Moodle - http://moodle.org/
 //
 // Moodle is free software: you can redistribute it and/or modify
 // it under the terms of the GNU General Public License as published by
@@ -12,7 +12,7 @@
 // GNU General Public License for more details.
 //
 // You should have received a copy of the GNU General Public License
-// along with Moodle.  If not, see <https://www.gnu.org/licenses/>.
+// along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
  * tests/personalxp_bridge_test.php for local_xpcelebration.
@@ -34,6 +34,11 @@ use local_xpcelebration\personalxp_bridge;
  * @covers \local_xpcelebration\personalxp_bridge
  */
 final class personalxp_bridge_test extends \advanced_testcase {
+    /**
+     * Method test_backend_level_up_creates_one_celebration.
+     *
+     * @return void Return value.
+     */
     public function test_backend_level_up_creates_one_celebration(): void {
         global $DB;
         $this->resetAfterTest();
@@ -72,6 +77,11 @@ final class personalxp_bridge_test extends \advanced_testcase {
         $this->assertSame(120, (int)$data['xp']);
     }
 
+    /**
+     * Method test_first_snapshot_does_not_replay_historical_level.
+     *
+     * @return void Return value.
+     */
     public function test_first_snapshot_does_not_replay_historical_level(): void {
         global $DB;
         $this->resetAfterTest();
