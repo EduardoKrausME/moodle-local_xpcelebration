@@ -28,7 +28,7 @@ $plugin->release = '1.0.3';
 $plugin->version = 2026100503;
 $plugin->component = 'local_xpcelebration';
 $plugin->requires = 2024042200; // Moodle 4.4.
-$plugin->maturity = MATURITY_BETA;
+$plugin->maturity = MATURITY_STABLE;
 $plugin->dependencies = [
     'local_personalxp' => 2026093002,
 ];
