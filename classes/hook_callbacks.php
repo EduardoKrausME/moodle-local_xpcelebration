@@ -45,6 +45,12 @@ class hook_callbacks {
             return;
         }
 
+        // This hook also runs on Moodle's plugin installation and upgrade screens.
+        // Skip capability checks until db/access.php has been registered in the database.
+        if (!get_capability_info('local/xpcelebration:view')) {
+            return;
+        }
+
         try {
             $courseid = !empty($PAGE->course->id) ? (int) $PAGE->course->id : 0;
             if ($courseid <= 0) {
