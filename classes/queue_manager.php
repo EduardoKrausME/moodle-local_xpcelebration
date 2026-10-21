@@ -104,7 +104,7 @@ final class queue_manager {
             'userid' => $userid,
             'courseid' => $courseid,
             'type' => $type,
-            'title' => \core_text::substr($title, 0, 255),
+            'title' => substr($title, 0, 255),
             'message' => $message,
             'datajson' => $json,
             'priority' => $priority,
@@ -245,7 +245,7 @@ final class queue_manager {
             } else if (is_bool($value) || is_int($value) || is_float($value) || $value === null) {
                 $clean[$key] = $value;
             } else if (is_string($value)) {
-                $clean[$key] = \core_text::substr(clean_param($value, PARAM_TEXT), 0, 1000);
+                $clean[$key] = substr(clean_param($value, PARAM_TEXT), 0, 1000);
             }
         }
         return $clean;
