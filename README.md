@@ -11,15 +11,15 @@ The plugin depends on `local_personalxp` for XP totals and levels. It reads thos
 
 The built-in semantic types are:
 
-- `levelup` — a Personal XP level changed;
-- `xpmilestone` — a configured cumulative XP milestone was crossed;
-- `personalrecord` — a learner beat one of their own previous records;
-- `goalcompleted` — a personal goal was completed;
-- `streak` — a consistency/streak threshold was reached;
-- `milestone` — an accumulated milestone was achieved;
-- `questcompleted` — a teacher-configured quest was completed;
-- `rewardunlocked` — a reward became available;
-- `courseprogress` — an important course-progress point was reached.
+- `levelup` - a Personal XP level changed;
+- `xpmilestone` - a configured cumulative XP milestone was crossed;
+- `personalrecord` - a learner beat one of their own previous records;
+- `goalcompleted` - a personal goal was completed;
+- `streak` - a consistency/streak threshold was reached;
+- `milestone` - an accumulated milestone was achieved;
+- `questcompleted` - a teacher-configured quest was completed;
+- `rewardunlocked` - a reward became available;
+- `courseprogress` - an important course-progress point was reached.
 
 Only `levelup`, configured XP milestones, and course completion are created automatically by this plugin. The other types
 are deliberately exposed for companion plugins such as `block_personalstreak`, `local_rewardshop`, `local_personalgoals`,
