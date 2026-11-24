@@ -24,7 +24,7 @@
 
 defined('MOODLE_INTERNAL') || die;
 
-$plugin->version = 2026101501;
+$plugin->version = 2026112400;
 $plugin->release = '1.0.8';
 $plugin->component = 'local_xpcelebration';
 $plugin->requires = 2024042200;
